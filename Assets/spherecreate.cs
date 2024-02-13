@@ -19,10 +19,31 @@ public class spherecreate : MonoBehaviour
            var spheres=  Instantiate(m_prefeb1);
             spheres.transform.position = transform.position;
 
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            InvokeRepeating("Update1", 0.0f, 0.5f);
 
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            CancelInvoke();
 
 
         }
+
+
+
+
+
+    }
+
+    void Update1()
+    {
+        
+            var spheres = Instantiate(m_prefeb1);
+            spheres.transform.position = transform.position;
+
 
     }
 }

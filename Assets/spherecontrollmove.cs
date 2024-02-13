@@ -13,12 +13,17 @@ public class spherecontrollmove : MonoBehaviour
 
     }
 
+   
+
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
 
-            transform.position += Vector3.forward * m_Speed;
+            transform.position += Vector3.forward * m_Speed * Time.deltaTime;
 
     }
+
+
+   
 
 }
