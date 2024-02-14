@@ -5,10 +5,11 @@ using UnityEngine;
 public class capsulecontrolmove : MonoBehaviour
 {
     [SerializeField] private float m_speed;
+    private Rigidbody m_Rigidbody;
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_Rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -16,26 +17,27 @@ public class capsulecontrolmove : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += Vector3.forward * m_speed * Time.deltaTime;
+            // transform.position += Vector3.forward * m_speed * Time.deltaTime;
+            m_Rigidbody.AddForce(Vector3.forward * m_speed);
 
         }
 
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position -= Vector3.forward * m_speed * Time.deltaTime;
+            m_Rigidbody.AddForce(Vector3.back * m_speed);
 
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += Vector3.left * m_speed * Time.deltaTime;
+            m_Rigidbody.AddForce(Vector3.left * m_speed);
 
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position -= Vector3.left * m_speed * Time.deltaTime;
+            m_Rigidbody.AddForce(Vector3.right * m_speed);
 
         }
 
