@@ -19,9 +19,9 @@ public class spherecontrollmove : MonoBehaviour
    
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        m_Rigidbody.velocity = Vector3.forward * m_Speed * Time.deltaTime;
+        m_Rigidbody.velocity = Vector3.forward * m_Speed ;
         //m_Rigidbody.AddForce(Vector3.forward * m_Speed); ;
 
 
@@ -32,10 +32,20 @@ public class spherecontrollmove : MonoBehaviour
         if (collision.gameObject.CompareTag("shoot")) {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            
         
         
         
         }
+
+        /*if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("you dead");
+
+
+
+
+        }*/
     }
 
 
