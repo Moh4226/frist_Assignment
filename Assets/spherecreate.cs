@@ -14,25 +14,31 @@ public class spherecreate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Time.timeScale > 0)
         {
-           var spheres=  Instantiate(m_prefeb1);
-            spheres.transform.position = transform.position;
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                var spheres = Instantiate(m_prefeb1);
+                spheres.transform.position = transform.position;
+
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                InvokeRepeating("Update1", 0.0f, 0.5f);
+
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                CancelInvoke();
+
+
+            }
 
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            InvokeRepeating("Update1", 0.0f, 0.5f);
-
+        else {
+            Debug.Log("the game is pause");
+        
         }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            CancelInvoke();
-
-
-        }
-
-
 
 
 
