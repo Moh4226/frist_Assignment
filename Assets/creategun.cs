@@ -6,10 +6,12 @@ using UnityEngine;
 public class creategun : MonoBehaviour
 {
     [SerializeField] private GameObject m_prefeb1;
+   // [SerializeField] private float m_gun;
+    [SerializeField] private EnemyData m_data;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Update1", 0.0f, 2.0f);
+        InvokeRepeating("Update1", 0.0f, m_data.Delay);
     }
 
     // Update is called once per frame

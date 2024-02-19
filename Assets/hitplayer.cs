@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class hitplayer : MonoBehaviour
 {
-    [SerializeField] private float m_Speed=0.05f;
+    // [SerializeField] private float m_Speed=0.05f;
+    [SerializeField] private EnemyData m_data;
     [SerializeField] private float m_Life=10.0f;
     private Rigidbody m_Rigidbody;
 
@@ -21,7 +22,7 @@ public class hitplayer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        m_Rigidbody.velocity = Vector3.left * m_Speed;
+        m_Rigidbody.velocity = Vector3.left * m_data.Speed;
         //m_Rigidbody.AddForce(Vector3.forward * m_Speed); ;
 
 
