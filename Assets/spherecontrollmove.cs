@@ -35,7 +35,7 @@ public class spherecontrollmove : MonoBehaviour
            
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            score.writescore();
+            score.Instance.writescore();
 
 
         }
