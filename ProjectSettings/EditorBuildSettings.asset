@@ -4,5 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: a430e03d5d1e03a4eb80d8020c6c0580
+  - enabled: 1
+    path: Assets/Scenes/PolygonStarter_scene.unity
+    guid: fdbf4d54285ee1c4d8414aac2c1c87b3
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
