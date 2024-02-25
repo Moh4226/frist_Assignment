@@ -1786,10 +1786,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: gun Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8266805767052596672, guid: be17b7f7fe7df6047b89d74e9779134a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1854328515676217542, guid: be17b7f7fe7df6047b89d74e9779134a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1661220776}
   m_SourcePrefab: {fileID: 100100000, guid: be17b7f7fe7df6047b89d74e9779134a, type: 3}
 --- !u!1001 &1340196589
 PrefabInstance:
@@ -3811,6 +3815,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbea6872df405a045862b0d1f277c5ac, type: 3}
+--- !u!1 &1661220769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1854328515676217542, guid: be17b7f7fe7df6047b89d74e9779134a, type: 3}
+  m_PrefabInstance: {fileID: 915617641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1661220776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661220769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5293532f7631e5d43a02de8dc2034be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_prefeb1: {fileID: 1395676517052645051, guid: f620e22523872ce49959986dd3e7c335, type: 3}
+  m_data: {fileID: 11400000, guid: db23ed3cca496f947a7bf8977355a8fd, type: 2}
 --- !u!1 &1700952464
 GameObject:
   m_ObjectHideFlags: 0
@@ -4640,11 +4663,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3688781365300080184, guid: 9cbc863efb2dea34bbf5960bfec2d68a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 109.4
+      value: 123.6
       objectReference: {fileID: 0}
     - target: {fileID: 3688781365300080184, guid: 9cbc863efb2dea34bbf5960bfec2d68a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 3688781365300080184, guid: 9cbc863efb2dea34bbf5960bfec2d68a, type: 3}
       propertyPath: m_LocalPosition.z

@@ -61,6 +61,26 @@ public class creategun : MonoBehaviour
     {
         while (true)
         {
+            for (int i = 0; i < 3; i++)
+            {
+                Shoot();
+                yield return new WaitForSeconds(0.3f);
+            }
+
+            yield return new WaitForSeconds(m_data.Delay);
+        }
+
+
+
+
+
+
+
+
+
+
+        /*while (true)
+        {
             yield return new WaitForSeconds(m_data.Delay);
             var spheres = Instantiate(m_prefeb1);
             spheres.transform.position = transform.position;
@@ -126,14 +146,18 @@ public class creategun : MonoBehaviour
 
 
 
-        }
-
-        
-
-       
-       // var spheres = Instantiate(m_prefeb1);
-      //  spheres.transform.position = transform.position;
-      
-
     }
+    private void Shoot()
+    {
+        GameObject newBullet = Instantiate(m_prefeb1, transform.position + Vector3.up, Quaternion.identity);
+        newBullet.GetComponent<hitplayer>().Init(m_data.Speed, true, m_data.AutoAim);
+    }
+
+
+
+    // var spheres = Instantiate(m_prefeb1);
+    //  spheres.transform.position = transform.position;
+
+
+
 }

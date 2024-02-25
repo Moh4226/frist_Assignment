@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 50
   Delay: 0.5
+  AutoAim: 1
