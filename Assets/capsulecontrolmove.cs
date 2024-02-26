@@ -15,10 +15,10 @@ public class capsulecontrolmove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             // transform.position += Vector3.forward * m_speed * Time.deltaTime;
-            m_Rigidbody.AddForce(Vector3.forward * m_speed);
+            m_Rigidbody.AddForce(transform.forward * m_speed);
 
         }
         if (Input.GetKeyUp(KeyCode.UpArrow))
@@ -29,9 +29,9 @@ public class capsulecontrolmove : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            m_Rigidbody.AddForce(Vector3.back * m_speed);
+            m_Rigidbody.AddForce(-transform.forward * m_speed);
 
         }
         if (Input.GetKeyUp(KeyCode.DownArrow))
@@ -43,9 +43,9 @@ public class capsulecontrolmove : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            m_Rigidbody.AddForce(Vector3.left * m_speed);
+            m_Rigidbody.AddForce(-transform.right * m_speed);
 
         }
         if (Input.GetKeyUp(KeyCode.LeftArrow))
@@ -57,9 +57,9 @@ public class capsulecontrolmove : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            m_Rigidbody.AddForce(Vector3.right * m_speed);
+            m_Rigidbody.AddForce(transform.right * m_speed);
 
         }
         if (Input.GetKeyUp(KeyCode.RightArrow))

@@ -9,6 +9,7 @@ public class EnemyData : ScriptableObject
     public float Speed;
     public float Delay;
     public bool AutoAim;
+    public float bulte_speed;
 
     
 }

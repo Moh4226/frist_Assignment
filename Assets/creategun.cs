@@ -150,7 +150,7 @@ public class creategun : MonoBehaviour
     private void Shoot()
     {
         GameObject newBullet = Instantiate(m_prefeb1, transform.position + Vector3.up, Quaternion.identity);
-        newBullet.GetComponent<hitplayer>().Init(m_data.Speed, true, m_data.AutoAim);
+        newBullet.GetComponent<hitplayer>().Init(m_data.bulte_speed, true, m_data.AutoAim);
     }
 
 
