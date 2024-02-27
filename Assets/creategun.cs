@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO.IsolatedStorage;
 using UnityEngine;
+using DG.Tweening;
+using Unity.IO.LowLevel.Unsafe;
 
 public class creategun : MonoBehaviour
 {
     [SerializeField] private GameObject m_prefeb1;
-   // [SerializeField] private float m_gun;
+    // [SerializeField] private float m_gun;
     [SerializeField] private EnemyData m_data;
     private Coroutine m_Coroutine;
     private Rigidbody m_Rigidbody;
     // Start is called before the first frame update
     void Start()
     {
-        m_Coroutine= StartCoroutine(Update1());
+        m_Coroutine = StartCoroutine(Update1());
         m_Rigidbody = GetComponent<Rigidbody>();
         //  InvokeRepeating("Update1", 0.0f, m_data.Delay);
     }
@@ -64,6 +66,8 @@ public class creategun : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
                 Shoot();
+                var tween = DOTween.Sequence();
+                yield return tween.WaitForCompletion();
                 yield return new WaitForSeconds(0.3f);
             }
 
@@ -150,13 +154,26 @@ public class creategun : MonoBehaviour
     private void Shoot()
     {
         GameObject newBullet = Instantiate(m_prefeb1, transform.position + Vector3.up, Quaternion.identity);
+       
         newBullet.GetComponent<hitplayer>().Init(m_data.bulte_speed, true, m_data.AutoAim);
     }
-
+    
 
 
     // var spheres = Instantiate(m_prefeb1);
     //  spheres.transform.position = transform.position;
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("planewar"))
+        {
+            //Destroy(col.gameObject);
+            // Destroy(gameObject);
+
+
+            Start();
+
+        }
+    }
 
 
 

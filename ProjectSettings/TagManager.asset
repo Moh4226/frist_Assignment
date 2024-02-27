@@ -7,6 +7,7 @@ TagManager:
   - shoot
   - Enemy
   - player
+  - planewar
   layers:
   - Default
   - TransparentFX

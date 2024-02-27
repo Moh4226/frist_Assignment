@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 public class spherecontrollmove : MonoBehaviour
 {
     [SerializeField] private float m_Speed;
     [SerializeField] private float m_Life;
     private Rigidbody m_Rigidbody;
-  
+    public Transform target;
+    Vector3 PlayerLookdirection;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +24,14 @@ public class spherecontrollmove : MonoBehaviour
 
     }
 
-   
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        m_Rigidbody.velocity = Vector3.forward * m_Speed ;
+        PlayerLookdirection = GameObject.FindGameObjectWithTag("player").transform.forward;
+
+        m_Rigidbody.velocity = PlayerLookdirection * m_Speed ;
         //m_Rigidbody.AddForce(Vector3.forward * m_Speed); ; 
     }
     

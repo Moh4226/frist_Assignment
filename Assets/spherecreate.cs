@@ -48,7 +48,7 @@ public class spherecreate : MonoBehaviour
     {
         
             var spheres = Instantiate(m_prefeb1);
-            spheres.transform.position = transform.position;
+            spheres.transform.position = transform.position +transform.forward;
 
 
     }
