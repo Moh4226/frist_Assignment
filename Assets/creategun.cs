@@ -10,16 +10,23 @@ public class creategun : MonoBehaviour
     [SerializeField] private GameObject m_prefeb1;
     // [SerializeField] private float m_gun;
     [SerializeField] private EnemyData m_data;
+    public bool ShootOnStart = true;
+
     private Coroutine m_Coroutine;
     private Rigidbody m_Rigidbody;
     // Start is called before the first frame update
     void Start()
     {
-        m_Coroutine = StartCoroutine(Update1());
+        if (ShootOnStart)
+            StartShooting();
+       // m_Coroutine = StartCoroutine(Update1());
         m_Rigidbody = GetComponent<Rigidbody>();
         //  InvokeRepeating("Update1", 0.0f, m_data.Delay);
     }
-
+    public void StartShooting()
+    {
+        StartCoroutine(Update1());
+    }
     // Update is called once per frame
     void Update()
     {
@@ -66,8 +73,8 @@ public class creategun : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
                 Shoot();
-                var tween = DOTween.Sequence();
-                yield return tween.WaitForCompletion();
+               // var tween = DOTween.Sequence();
+                //yield return tween.WaitForCompletion();
                 yield return new WaitForSeconds(0.3f);
             }
 
@@ -162,18 +169,7 @@ public class creategun : MonoBehaviour
 
     // var spheres = Instantiate(m_prefeb1);
     //  spheres.transform.position = transform.position;
-    private void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.CompareTag("planewar"))
-        {
-            //Destroy(col.gameObject);
-            // Destroy(gameObject);
-
-
-            Start();
-
-        }
-    }
+   
 
 
 

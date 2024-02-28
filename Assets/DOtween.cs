@@ -1,60 +1,51 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DOtween : MonoBehaviour
 {
-    [SerializeField] private GameObject m_enemyprefab;
-    [SerializeField] private Transform m_enemySpawn;
+    [SerializeField] private List<EnemyController> m_enemies;
 
+    private bool m_activated = false;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-       // m_enemySpawn = GameObject.FindGameObjectWithTag("gun");
-
-
+        foreach (EnemyController enemy in m_enemies)
+        {
+            enemy.GetComponent<creategun>().ShootOnStart = false;
+            enemy.GetComponent<Rigidbody>().isKinematic = true;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void EnterOnWar() { 
-        
-    
-    
-    
-    
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag =="player")
+        if (!m_activated && other.gameObject.tag == "player")
         {
-            Debug.Log("you enter the zone");
-            StartCoroutine(create(5));
+            m_activated = true;
+            Debug.Log("you touch--------");
 
+            var seq = DOTween.Sequence();
+            foreach (EnemyController enemy in m_enemies)
+            {
+                enemy.gameObject.SetActive(true);
+
+                var pos = enemy.transform.position;
+
+                RaycastHit info;
+                if (Physics.Raycast(pos, Vector3.down, out info))
+                {
+                    pos.y = info.point.y + 3.5f;
+                }
+
+                seq.Append(enemy.transform.DOMove(pos, 3)
+                    .OnComplete(
+                        () => {
+                            enemy.GetComponent<creategun>().StartShooting();
+                        }
+                     ));
+            }
         }
-    }
-
-    IEnumerator create(int amount) {
-        int enemycreate = 0;
-        while (enemycreate<amount) {
-            Vector3 spawnpos = m_enemySpawn.position;
-            yield return new WaitForSeconds(1.0f);
-            spawnpos.x += Random.Range(-10, 10);
-            spawnpos.y += Random.Range(-10, 10);
-            Instantiate(m_enemyprefab, spawnpos, Quaternion.identity);
-            enemycreate++;
-
-
-
-        }
-
-
-
     }
 }
