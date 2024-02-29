@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1842777201060120141}
   - component: {fileID: -4701288171887564762}
   - component: {fileID: 6959829676847998900}
+  - component: {fileID: 3515464692354760380}
   m_Layer: 0
   m_Name: Spheregun
   m_TagString: Untagged
@@ -150,3 +151,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: db23ed3cca496f947a7bf8977355a8fd, type: 2}
   m_Life: 10
+--- !u!95 &3515464692354760380
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395676517052645051}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

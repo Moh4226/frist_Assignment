@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Speed: 10
   m_Life: 10
+  target: {fileID: 0}
 --- !u!135 &1842777201060120141
 SphereCollider:
   m_ObjectHideFlags: 0

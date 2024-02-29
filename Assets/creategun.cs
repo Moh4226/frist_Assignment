@@ -70,9 +70,10 @@ public class creategun : MonoBehaviour
     {
         while (true)
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 1; i++)
             {
                 Shoot();
+                Movement();
                // var tween = DOTween.Sequence();
                 //yield return tween.WaitForCompletion();
                 yield return new WaitForSeconds(0.3f);
@@ -164,12 +165,25 @@ public class creategun : MonoBehaviour
        
         newBullet.GetComponent<hitplayer>().Init(m_data.bulte_speed, true, m_data.AutoAim);
     }
-    
+    void Movement()
+    {
+        var animator = GetComponent<Animator>();
+
+        animator.SetTrigger("Fire");
+        animator.SetTrigger("Fire");
+
+
+
+
+        // animator.SetBool("shooting", false);
+
+
+    }
 
 
     // var spheres = Instantiate(m_prefeb1);
     //  spheres.transform.position = transform.position;
-   
+
 
 
 

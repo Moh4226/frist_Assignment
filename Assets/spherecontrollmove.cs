@@ -19,22 +19,23 @@ public class spherecontrollmove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerLookdirection = GameObject.FindGameObjectWithTag("player").transform.forward;
         m_Rigidbody = GetComponent<Rigidbody>();
         Destroy(gameObject, m_Life);
 
     }
-
+   
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        PlayerLookdirection = GameObject.FindGameObjectWithTag("player").transform.forward;
 
         m_Rigidbody.velocity = PlayerLookdirection * m_Speed ;
+
         //m_Rigidbody.AddForce(Vector3.forward * m_Speed); ; 
     }
-    
+
 
     private void OnCollisionEnter(Collision collision)
     {

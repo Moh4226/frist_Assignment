@@ -36,10 +36,10 @@ public class DOtween : MonoBehaviour
                 RaycastHit info;
                 if (Physics.Raycast(pos, Vector3.down, out info))
                 {
-                    pos.y = info.point.y + 3.5f;
+                    pos.y = info.point.y + 3f;
                 }
 
-                seq.Append(enemy.transform.DOMove(pos, 3)
+                seq.Append(enemy.transform.DOMove(pos,3)
                     .OnComplete(
                         () => {
                             enemy.GetComponent<creategun>().StartShooting();

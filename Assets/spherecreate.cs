@@ -18,23 +18,31 @@ public class spherecreate : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.H))
             {
+                Movement();
                 var spheres = Instantiate(m_prefeb1);
                 spheres.transform.position = transform.position;
 
             }
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                
                 InvokeRepeating("Update1", 0.0f, 0.5f);
 
             }
             if (Input.GetKeyUp(KeyCode.Space))
             {
+               // Movement();
+
                 CancelInvoke();
+
 
 
             }
 
+
         }
+
         else {
             Debug.Log("the game is pause");
         
@@ -43,13 +51,25 @@ public class spherecreate : MonoBehaviour
 
 
     }
+    void Movement() {
+        var animator = GetComponent<Animator>();
 
+        animator.SetTrigger("shoot");
+        animator.SetTrigger("shoot");
+
+
+
+
+        // animator.SetBool("shooting", false);
+
+
+    }
     void Update1()
     {
-        
-            var spheres = Instantiate(m_prefeb1);
-            spheres.transform.position = transform.position +transform.forward;
+       
 
+        var spheres = Instantiate(m_prefeb1);
+            spheres.transform.position = transform.position +transform.forward;
 
     }
 }
