@@ -28,7 +28,7 @@ public class spherecontrollmove : MonoBehaviour
 
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
 
         m_Rigidbody.velocity = PlayerLookdirection * m_Speed ;
@@ -48,7 +48,7 @@ public class spherecontrollmove : MonoBehaviour
 
         }
         
-        FixedUpdate();
+                
 
         /*if (collision.gameObject.CompareTag("Enemy"))
         {
