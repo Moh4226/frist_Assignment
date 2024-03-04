@@ -14,12 +14,11 @@ public class spherecontrollmove : MonoBehaviour
     public Transform target;
     Vector3 PlayerLookdirection;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
         PlayerLookdirection = GameObject.FindGameObjectWithTag("player").transform.forward;
+   
         m_Rigidbody = GetComponent<Rigidbody>();
         Destroy(gameObject, m_Life);
 
@@ -41,14 +40,17 @@ public class spherecontrollmove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("shoot")) {
            
+           
+
             Destroy(collision.gameObject);
             Destroy(gameObject);
             score.Instance.writescore();
 
 
         }
-        
-                
+
+
+
 
         /*if (collision.gameObject.CompareTag("Enemy"))
         {

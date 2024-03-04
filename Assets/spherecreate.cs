@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class spherecreate : MonoBehaviour
 {
     [SerializeField] private GameObject m_prefeb1;
     private PlayerAction m_PlayerAction;
+    [SerializeField] AudioSource shootingsound;
 
     // Start is called before the first frame update
     void Awake()
@@ -47,14 +49,13 @@ public class spherecreate : MonoBehaviour
             {
                 var spheres = Instantiate(m_prefeb1);
                 spheres.transform.position = transform.position;
-                Movement();
+                shootingsound.Play();
+
+
             }
             if (m_PlayerAction.Movement.shootcons.WasPressedThisFrame()) {
-                Movement();
+
                 InvokeRepeating("Update1", 0.0f, 1f);
-
-
-
             }
             if (m_PlayerAction.Movement.shootcons.WasReleasedThisFrame()) {
                 CancelInvoke();
