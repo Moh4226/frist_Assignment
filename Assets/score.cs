@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-
+/*
+ * this class for print the score of kill
+ * */
 
 public class score : MonoBehaviour
 {

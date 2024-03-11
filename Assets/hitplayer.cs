@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * in this class if the bullet of enemy hit the player or no and we have two way 
+ * frist the bullet find the direction of player 
+ * Second the bullet follow the player 
+ * */
 public class hitplayer : MonoBehaviour
 {
     // [SerializeField] private float m_Speed=0.05f;
@@ -10,8 +14,6 @@ public class hitplayer : MonoBehaviour
     private Rigidbody m_Rigidbody;
     private capsulecontrolmove m_player;
     private Quaternion m_quat;
-    private bool m_followPlayer;
-    private float m_speed;
 
 
     // Start is called before the first frame update
@@ -25,25 +27,25 @@ public class hitplayer : MonoBehaviour
 
     public void Init(float speed, bool lookAtPlayer, bool followPlayer)
     {
-        m_speed = speed;
+        m_data.enemy_speed = speed;
 
         if (lookAtPlayer)
         {
             m_player = FindObjectOfType<capsulecontrolmove>();
             m_quat = Quaternion.LookRotation(m_player.transform.position - transform.position);
-            m_followPlayer = followPlayer;
+            m_data.followPlayer = followPlayer;
         }
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (m_followPlayer)
+        if (m_data.followPlayer)
         {
             m_quat = Quaternion.LookRotation(m_player.transform.position - transform.position);
         }
 
         //transform.position += Vector3.forward * m_speed * Time.deltaTime;
-        m_Rigidbody.velocity = m_quat * Vector3.forward * m_speed;
+        m_Rigidbody.velocity = m_quat * Vector3.forward * m_data.enemy_speed;
 
 
     }

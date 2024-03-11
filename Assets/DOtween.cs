@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/*
+ * we use DOtween in the game 
+ * */
 public class DOtween : MonoBehaviour
 {
     [SerializeField] private List<EnemyController> m_enemies;

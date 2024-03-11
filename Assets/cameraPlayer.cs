@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+/*
+ * this class for camera player 3D
+ * */
 public class cameraPlayer : MonoBehaviour
 {
     public capsulecontrolmove player;

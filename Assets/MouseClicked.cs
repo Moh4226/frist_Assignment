@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * this class we use RaycastHit
+ */
 public class MouseClicked : MonoBehaviour
 {
     // Start is called before the first frame update

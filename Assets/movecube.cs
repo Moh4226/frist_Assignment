@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-
+/*
+ * this class for keep the cube move in the circle 
+ * */
 public class movecube : MonoBehaviour
 {
     [SerializeField] public Vector3 _startPosition;

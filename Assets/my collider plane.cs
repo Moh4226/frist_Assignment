@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * we use different Collision in the plane 
+ * */
 public class mycolliderplane : MonoBehaviour
 {
     // Start is called before the first frame update

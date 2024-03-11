@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+ * this class for move the enemy
+ * */
 public class EnemyController : MonoBehaviour
 {
     private score m_scoreCounter;

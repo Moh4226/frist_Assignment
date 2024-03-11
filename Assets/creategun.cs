@@ -4,7 +4,9 @@ using System.IO.IsolatedStorage;
 using UnityEngine;
 using DG.Tweening;
 using Unity.IO.LowLevel.Unsafe;
-
+/*
+ * this class we create the bullte for enemy 
+ */
 public class creategun : MonoBehaviour
 {
     [SerializeField] private GameObject m_prefeb1;

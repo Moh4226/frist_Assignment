@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * this class we use partical_system in the game 
+ */
 public class partical_system : MonoBehaviour
 {
     Vector3 smoke;

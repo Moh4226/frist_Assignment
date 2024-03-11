@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+/*
+ * this class for zoom 
+ * */
 public class zoomcamera : MonoBehaviour
 {
     public float zoomLevel;

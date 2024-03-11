@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * this class for move the bullte
+ */
 public class movebullt : MonoBehaviour
 {
     // Start is called before the first frame update

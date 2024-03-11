@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * this class for Move the Player and animation of moving 
+ * */
 public class capsulecontrolmove : MonoBehaviour
 {
-    [SerializeField] private float m_speed;
-    [SerializeField] private float m_Force;
+
+    [SerializeField] private EnemyData m_data;
+
+
     private Rigidbody m_Rigidbody;
     private PlayerAction m_PlayerAction;
     private Vector2 move;
@@ -120,14 +124,14 @@ public class capsulecontrolmove : MonoBehaviour
         move = m_PlayerAction.Movement.Move.ReadValue<Vector2>();
        
       
-        m_Rigidbody.velocity = new Vector3(move.x * m_speed, m_Rigidbody.velocity.y, move.y * m_speed);
+        m_Rigidbody.velocity = new Vector3(move.x * m_data.Player_Speed, m_Rigidbody.velocity.y, move.y * m_data.Player_Speed);
 
         Debug.Log(m_Rigidbody.velocity);
 
         
         if (m_PlayerAction.Movement.Jump.WasPressedThisFrame())
             {
-                m_Rigidbody.AddForce(Vector3.up * m_Force,ForceMode.Impulse);
+                m_Rigidbody.AddForce(Vector3.up * m_data.Force,ForceMode.Impulse);
             m_PlayerAction.Movement.Move.bindings.Equals(move.x);
                // transform.rotation = Quaternion.LookRotation(m_Rigidbody.velocity);
             }

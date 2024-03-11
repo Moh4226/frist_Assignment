@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/*
+ * this class for move to Scene 2
+ * */
 public class Level2 : MonoBehaviour
 {
     // Start is called before the first frame update

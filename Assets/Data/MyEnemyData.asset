@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac91eebc916dbc46856b7576549d8c8, type: 3}
   m_Name: MyEnemyData
   m_EditorClassIdentifier: 
-  Speed: 50
+  Player_Speed: 100
   Delay: 0.5
-  AutoAim: 0
+  AutoAim: 1
   bulte_speed: 50
+  enemy_speed: 1
+  Force: 10
+  followPlayer: 1
+  Life_time: 10

@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+/*
+ * this class for create bullet with animation
+ * 
+ * */
 public class spherecreate : MonoBehaviour
 {
     [SerializeField] private GameObject m_prefeb1;

@@ -7572,8 +7572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c28577fb760c4449d0cb0e8689e841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 500
-  m_Force: 0
+  m_data: {fileID: 0}
 --- !u!54 &812579700
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7884,6 +7883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1354452180}
+  m_data: {fileID: 11400000, guid: db23ed3cca496f947a7bf8977355a8fd, type: 2}
 --- !u!195 &986584904
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -7894,7 +7894,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 30
+  m_Speed: 100
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -8647,8 +8647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c28577fb760c4449d0cb0e8689e841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 20
-  m_Force: 5
+  m_data: {fileID: 11400000, guid: db23ed3cca496f947a7bf8977355a8fd, type: 2}
 --- !u!136 &1354452173
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9613,7 +9612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1522084036
 Transform:
   m_ObjectHideFlags: 0
@@ -16693,7 +16692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1700952465
 AudioListener:
   m_ObjectHideFlags: 0

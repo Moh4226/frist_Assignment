@@ -5,11 +5,16 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
+/*
+ *this class for move the bullte and if the hit the enemy distory this enemy
+ **/
 
 public class spherecontrollmove : MonoBehaviour
 {
-    [SerializeField] private float m_Speed;
-    [SerializeField] private float m_Life;
+  
+    
+    [SerializeField] private EnemyData m_data;
+
     private Rigidbody m_Rigidbody;
     public Transform target;
     Vector3 PlayerLookdirection;
@@ -20,7 +25,7 @@ public class spherecontrollmove : MonoBehaviour
         PlayerLookdirection = GameObject.FindGameObjectWithTag("player").transform.forward;
    
         m_Rigidbody = GetComponent<Rigidbody>();
-        Destroy(gameObject, m_Life);
+        Destroy(gameObject, m_data.Life_time);
 
     }
    
@@ -30,7 +35,7 @@ public class spherecontrollmove : MonoBehaviour
     void Update()
     {
 
-        m_Rigidbody.velocity = PlayerLookdirection * m_Speed ;
+        m_Rigidbody.velocity = PlayerLookdirection * m_data.bulte_speed ;
 
         //m_Rigidbody.AddForce(Vector3.forward * m_Speed); ; 
     }
